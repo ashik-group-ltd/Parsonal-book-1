@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="The Life Story of Ashik Jaman — EST. 2005">
+<title>Ashik Jaman — My Story</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --bg:#050505;
+  --gold:#d6b36a;
+  --gold2:#f2d99b;
+  --white:#f6f3ed;
+  --muted:#aaa59b;
+  --glass:rgba(255,255,255,.055);
+  --line:rgba(214,179,106,.28);
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background:var(--bg);
+  color:var(--white);
+  font-family:Inter,Arial,sans-serif;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-5;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(214,179,106,.12),transparent 28%),
+    radial-gradient(circle at 80% 70%,rgba(214,179,106,.08),transparent 30%),
+    linear-gradient(135deg,#030303,#0b0a08 50%,#020202);
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:20;
+  pointer-events:none;
+  opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+.orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(70px);
+  pointer-events:none;
+  z-index:-2;
+  animation:float 12s ease-in-out infinite alternate;
+}
+
+.orb.one{
+  width:240px;
+  height:240px;
+  background:rgba(214,179,106,.12);
+  top:-80px;
+  left:-80px;
+}
+
+.orb.two{
+  width:300px;
+  height:300px;
+  background:rgba(160,120,45,.08);
+  right:-120px;
+  bottom:-120px;
+  animation-delay:2s;
+}
+
+@keyframes float{
+  from{transform:translate(0,0)}
+  to{transform:translate(35px,-25px)}
+}
+
+/* ================= TOP ================= */
+
+.top{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6vw;
+  z-index:30;
+  pointer-events:none;
+}
+
+.brand{
+  font-family:"Cormorant Garamond",serif;
+  letter-spacing:.18em;
+  font-size:17px;
+  color:var(--gold2);
+  text-transform:uppercase;
+}
+
+.chapter{
+  font-size:10px;
+  letter-spacing:.28em;
+  color:#8d897f;
+  text-transform:uppercase;
+}
+
+/* ================= PROGRESS ================= */
+
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:2px;
+  width:20%;
+  background:var(--gold);
+  z-index:50;
+  transition:width .8s cubic-bezier(.77,0,.18,1);
+}
+
+/* ================= SLIDER ================= */
+
+.slider{
+  width:500vw;
+  height:100vh;
+  display:flex;
+  transition:transform 1s cubic-bezier(.77,0,.18,1);
+  will-change:transform;
+}
+
+.page{
+  width:100vw;
+  height:100vh;
+  flex-shrink:0;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:90px 7vw 110px;
+  overflow:hidden;
+}
+
+.page-inner{
+  width:min(1050px,100%);
+  max-height:calc(100vh - 180px);
+  overflow:auto;
+  scrollbar-width:none;
+}
+
+.page-inner::-webkit-scrollbar{
+  display:none;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  text-align:center;
+}
+
+.eyebrow{
+  font-size:10px;
+  letter-spacing:.42em;
+  color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:24px;
+}
+
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(62px,11vw,145px);
+  line-height:.8;
+  font-weight:500;
+  letter-spacing:-.045em;
+  background:linear-gradient(120deg,#fff,#d6b36a 45%,#fff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:titleIn 1.3s ease both;
+}
+
+.hero .year{
+  margin-top:30px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  letter-spacing:.45em;
+  color:var(--gold2);
+  animation:fadeUp 1.2s .3s both;
+}
+
+.hero .line{
+  width:70px;
+  height:1px;
+  background:var(--gold);
+  margin:38px auto 22px;
+  animation:lineIn 1s .6s both;
+}
+
+.hero .small{
+  color:#8d8a84;
+  font-size:11px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  animation:fadeUp 1s .7s both;
+}
+
+@keyframes titleIn{
+  from{
+    opacity:0;
+    transform:translateY(35px);
+    filter:blur(12px);
+  }
+  to{
+    opacity:1;
+    transform:none;
+    filter:none;
+  }
+}
+
+@keyframes lineIn{
+  from{
+    width:0;
+    opacity:0;
+  }
+  to{
+    width:70px;
+    opacity:1;
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(18px);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* ================= STORY CARD ================= */
+
+.story-card{
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.075),
+    rgba(255,255,255,.025)
+  );
+
+  border:1px solid rgba(214,179,106,.18);
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.45),
+    inset 0 1px rgba(255,255,255,.06);
+
+  border-radius:28px;
+  padding:clamp(28px,5vw,65px);
+
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+}
+
+.page-number{
+  font-size:11px;
+  letter-spacing:.35em;
+  color:var(--gold);
+  margin-bottom:15px;
+}
+
+.story-title{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:500;
+  font-size:clamp(45px,7vw,78px);
+  line-height:.9;
+  margin-bottom:8px;
+}
+
+.story-subtitle{
+  color:#8d897f;
+  font-size:11px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin-bottom:35px;
+}
+
+.story-text{
+  color:#d2cec6;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(18px,2vw,23px);
+  line-height:1.55;
+  max-width:900px;
+}
+
+.story-text p{
+  margin-bottom:20px;
+}
+
+.quote{
+  margin:30px 0;
+  padding:22px 25px;
+  border-left:1px solid var(--gold);
+  color:var(--gold2);
+  font-size:24px;
+  font-style:italic;
+}
+
+.highlight{
+  color:var(--gold2);
+}
+
+.closing{
+  margin-top:32px;
+  color:var(--gold);
+  letter-spacing:.08em;
+  font-family:Inter,sans-serif;
+  font-size:11px;
+  line-height:2;
+}
+
+/* ================= AGL ================= */
+
+.agl-card{
+  text-align:center;
+}
+
+.agl-logo{
+  width:90px;
+  height:90px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 28px;
+  color:var(--gold);
+  font-family:"Cormorant Garamond",serif;
+  font-size:27px;
+  letter-spacing:.08em;
+  box-shadow:0 0 50px rgba(214,179,106,.08);
+}
+
+.goal{
+  margin:35px auto;
+  padding:25px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+  letter-spacing:.08em;
+  color:#d5d0c6;
+}
+
+.goal span{
+  color:var(--gold);
+  margin:0 8px;
+}
+
+/* ================= FUTURE ================= */
+
+.future-card{
+  text-align:center;
+}
+
+.promise{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(25px,3vw,36px);
+  line-height:1.35;
+  color:#e7e2d9;
+  max-width:850px;
+  margin:0 auto 35px;
+}
+
+.to-wife{
+  color:var(--gold);
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  font-size:10px;
+  margin-bottom:18px;
+}
+
+/* ================= NAVIGATION ================= */
+
+.nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:27px;
+  z-index:40;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+}
+
+/* BIG PREMIUM BUTTON */
+
+.nav button{
+  min-width:145px;
+  height:52px;
+
+  border:1px solid rgba(214,179,106,.45);
+
+  background:linear-gradient(
+    135deg,
+    rgba(214,179,106,.16),
+    rgba(10,10,10,.75)
+  );
+
+  color:#f2d99b;
+
+  border-radius:100px;
+
+  padding:0 28px;
+
+  font-size:12px;
+  font-weight:600;
+
+  letter-spacing:.25em;
+
+  cursor:pointer;
+
+  transition:.35s ease;
+
+  backdrop-filter:blur(15px);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,.35),
+    inset 0 1px rgba(255,255,255,.08);
+}
+
+.nav button:hover{
+  transform:translateY(-3px) scale(1.03);
+
+  border-color:#d6b36a;
+
+  background:linear-gradient(
+    135deg,
+    rgba(214,179,106,.28),
+    rgba(20,18,14,.85)
+  );
+
+  box-shadow:
+    0 12px 40px rgba(214,179,106,.15),
+    0 0 25px rgba(214,179,106,.08);
+}
+
+.nav button:active{
+  transform:scale(.96);
+}
+
+.nav button:disabled{
+  opacity:.3;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.counter{
+  font-size:10px;
+  color:#77736c;
+  letter-spacing:.2em;
+  min-width:60px;
+  text-align:center;
+}
+
+/* ================= DOTS ================= */
+
+.dots{
+  position:fixed;
+  right:28px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:40;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#5b5852;
+  cursor:pointer;
+  transition:.35s;
+}
+
+.dot.active{
+  background:var(--gold);
+  box-shadow:0 0 14px rgba(214,179,106,.7);
+  transform:scale(1.7);
+}
+
+/* ================= SWIPE HINT ================= */
+
+.swipe{
+  position:fixed;
+  bottom:92px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:25;
+
+  color:#77736c;
+
+  font-size:9px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+
+  animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{
+    opacity:.35;
+  }
+
+  50%{
+    opacity:1;
+  }
+}
+
+/* ================= PAGE ANIMATION ================= */
+
+.page.active .story-card{
+  animation:cardIn .9s both;
+}
+
+@keyframes cardIn{
+  from{
+    opacity:0;
+    transform:translateY(35px) scale(.98);
+    filter:blur(8px);
+  }
+
+  to{
+    opacity:1;
+    transform:none;
+    filter:none;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+  .top{
+    height:62px;
+    padding:0 20px;
+  }
+
+  .brand{
+    font-size:14px;
+  }
+
+  .chapter{
+    font-size:8px;
+  }
+
+  .page{
+    padding:75px 18px 105px;
+  }
+
+  .page-inner{
+    max-height:calc(100vh - 150px);
+  }
+
+  .story-card{
+    border-radius:22px;
+    padding:28px 22px;
+  }
+
+  .story-title{
+    font-size:48px;
+  }
+
+  .story-subtitle{
+    margin-bottom:25px;
+  }
+
+  .story-text{
+    font-size:19px;
+    line-height:1.5;
+  }
+
+  .hero h1{
+    font-size:65px;
+  }
+
+  .hero .year{
+    font-size:19px;
+  }
+
+  .dots{
+    right:13px;
+    gap:10px;
+  }
+
+  /* BIG MOBILE BUTTON */
+
+  .nav{
+    bottom:17px;
+    gap:8px;
+  }
+
+  .nav button{
+    min-width:125px;
+    height:50px;
+    padding:0 18px;
+    font-size:10px;
+    letter-spacing:.20em;
+  }
+
+  .counter{
+    min-width:48px;
+    font-size:9px;
+  }
+
+  .swipe{
+    bottom:78px;
+  }
+}
+
+/* ================= REDUCED MOTION ================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+
+<div class="progress" id="progress"></div>
+
+<header class="top">
+
+  <div class="brand">
+    Ashik Jaman
+  </div>
+
+  <div class="chapter" id="chapter">
+    Chapter 01
+  </div>
+
+</header>
+
+
+<main class="slider" id="slider">
+
+<!-- ================= PAGE 1 ================= -->
+
+<section class="page active">
+
+  <div class="page-inner hero">
+
+    <div class="eyebrow">
+      A Personal Story
+    </div>
+
+    <h1>
+      ASHIK<br>JAMAN
+    </h1>
+
+    <div class="year">
+      EST. 2005
+    </div>
+
+    <div class="line"></div>
+
+    <div class="small">
+      This is where my story begins
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PAGE 2 ================= -->
+
+<section class="page">
+
+<div class="page-inner">
+
+<div class="story-card">
+
+<div class="page-number">
+02 / 05
+</div>
+
+<h2 class="story-title">
+About Me
+</h2>
+
+<div class="story-subtitle">
+The Beginning
+</div>
+
+<div class="story-text">
+
+<p>
+Meri kahani shuru se aasaan nahi thi. Zindagi ne mujhe bahut chhoti umar mein hi kuch aise faisle lene par majboor kiya, jinke baare mein shayad us umar mein koi sochta bhi nahi.
+</p>
+
+<p>
+Jab main lagbhag 16 saal ka tha, tab main Class 9 mein padh raha tha. Ghar ki financial situation theek nahi thi aur mujhe zaroori support nahi mil pa raha tha.
+</p>
+
+<p>
+Isliye mujhe apni padhai chhodni padi.
+</p>
+
+<p>
+Aur sirf 16 saal ki umar mein, main apna ghar chhodkar bahar kaam karne aur apni zindagi khud sambhalne ke liye nikal pada.
+</p>
+
+<div class="quote">
+"Mujhe kuch karna hai. Mujhe apni zindagi badalni hai."
+</div>
+
+<p>
+Us waqt mujhe nahi pata tha ki aage kya hoga. Na koi perfect plan tha, na koi bada backup.
+</p>
+
+<p>
+Jis umar mein doosre bachche school ja rahe the, us umar mein main kaam, paisa, responsibility aur zindagi ki reality samajhna shuru kar raha tha.
+</p>
+
+<p>
+Raasta aasaan nahi tha. Bahut saari mushkilein aayi. Kabhi confidence gira, kabhi thakan hui, kabhi laga ki sab kuch ruk gaya hai.
+</p>
+
+<p>
+Lekin main rukna nahi chahta tha.
+</p>
+
+<p>
+Har mushkil ne mujhe kuch na kuch sikhaya. Maine seekha ki paisa kitni mehnat se milta hai, independence kya hoti hai, aur apne future ke liye khud khade hona kitna zaroori hai.
+</p>
+
+<p>
+Mere paas shuru mein koi perfect roadmap nahi tha. Bas ek destination tha — ek behtar zindagi.
+</p>
+
+<p>
+Aur yeh website meri usi journey ki kahani hai.
+</p>
+
+<p>
+Yeh sirf meri past ki story nahi hai. Yeh us insaan ki kahani hai jo abhi bhi apni zindagi bana raha hai.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PAGE 3 ================= -->
+
+<section class="page">
+
+<div class="page-inner">
+
+<div class="story-card">
+
+<div class="page-number">
+03 / 05
+</div>
+
+<h2 class="story-title">
+My Love Story
+</h2>
+
+<div class="story-subtitle">
+A Story That Started in Class 9
+</div>
+
+<div class="story-text">
+
+<p>
+Jab main Class 9 mein tha, tab meri zindagi mein ek ladki aayi — Unknown.
+</p>
+
+<p>
+Us waqt mujhe nahi pata tha ki ek simple si feeling meri zindagi ka itna bada hissa ban jayegi.
+</p>
+
+<p>
+Mujhe Unknown pasand thi. Dheere-dheere woh pasand love mein badal gayi.
+</p>
+
+<p>
+Lekin meri kahani ek one-sided love story thi.
+</p>
+
+<p>
+Main lagbhag 3 saal tak usse dil se chahta raha. Maine kabhi us feeling ko fake nahi kiya. Jo tha, sach tha.
+</p>
+
+<p>
+Lekin har love story ka ending relationship nahi hota.
+</p>
+
+<p>
+Ek waqt ke baad mujhe samajh aaya ki kisi ko pyaar karna aur kisi ko apni zindagi mein paana — dono alag cheezein hain.
+</p>
+
+<p>
+Maine dheere-dheere usse love karna chhod diya. Move on karna aasaan nahi tha, lekin maine apni feelings ko accept kiya aur apni zindagi par focus karna shuru kiya.
+</p>
+
+<p>
+Aaj Unknown meri just friend hai.
+</p>
+
+<p>
+Aur sabse important baat — Aaj mere dil mein uske liye koi romantic feeling nahi hai.
+</p>
+
+<p>
+Jo tha, woh meri zindagi ka ek khoobsurat chapter tha.
+</p>
+
+<p>
+Main us chapter ko erase nahi karna chahta. Kyunki usne mujhe kuch cheezein sikhayi — feelings ko samajhna, acceptance, letting go, aur sabse important...
+</p>
+
+<div class="quote">
+Kabhi-kabhi kisi ko dil se chahna bhi zaroori nahi ki usse apna banana ho.
+</div>
+
+<p>
+Kuch log hamari life mein relationship banne ke liye nahi, ek yaad aur ek chapter banne ke liye aate hain.
+</p>
+
+<div class="closing">
+Chapter Closed.<br>
+Friendship Remains.<br>
+Life Moves Forward. ❤️
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PAGE 4 ================= -->
+
+<section class="page">
+
+<div class="page-inner">
+
+<div class="story-card agl-card">
+
+<div class="agl-logo">
+AGL
+</div>
+
+<div class="page-number">
+04 / 05
+</div>
+
+<h2 class="story-title">
+AGL Vision
+</h2>
+
+<div class="story-subtitle">
+Building Something Bigger
+</div>
+
+<div class="story-text">
+
+<p>
+<span class="highlight">
+AGL — Ashik Group Limited
+</span>
+</p>
+
+<p>
+AGL mere liye sirf ek company ka naam nahi hai.
+Yeh ek vision hai.
+</p>
+
+<p>
+Ek aisa vision jo meri life ke experiences se nikla hai — struggles se, failures se, learning se aur future ke dreams se.
+</p>
+
+<p>
+Mera dream hai ki AGL ek din ek strong aur trusted organization bane, jiske through different businesses aur opportunities create ki ja sakein.
+</p>
+
+<p>
+Main chahta hoon ki AGL ka foundation sirf paisa kamane par nahi, balki trust, quality, innovation aur long-term growth par ho.
+</p>
+
+<p>
+Jo ladka 16 saal ki age mein apni journey shuru kar raha tha, uska dream aaj bhi zinda hai.
+</p>
+
+<p>
+Difference sirf itna hai ki tab mere paas sirf ek dream tha.
+Aaj mere paas ek vision hai.
+</p>
+
+<div class="goal">
+
+My Goal
+
+<br><br>
+
+<span>Learn</span>
+→
+<span>Build</span>
+→
+<span>Grow</span>
+→
+<span>Create Opportunities</span>
+
+</div>
+
+<div class="closing">
+
+AGL Vision
+
+<br><br>
+
+"From a personal dream to a growing organization — building something meaningful for the future."
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PAGE 5 ================= -->
+
+<section class="page">
+
+<div class="page-inner">
+
+<div class="story-card future-card">
+
+<div class="page-number">
+05 / 05
+</div>
+
+<h2 class="story-title">
+Someone I Haven't Met Yet
+</h2>
+
+<div class="story-subtitle">
+Future Chapter
+</div>
+
+<div class="promise">
+
+Main chahta hoon ki jis din meri shaadi hogi, us din tak main apni life mein itna grow kar chuka hoon ki main apni future family ko ek stable aur peaceful life de sakun.
+
+</div>
+
+<div class="story-text">
+
+<p>
+Main apne past ko lekar nahi, apne future ko lekar relationship mein jaana chahta hoon.
+</p>
+
+<p>
+Aur shayad ek din...
+Jab main peeche mudkar apni life story dekhunga, toh mujhe samajh aayega ki har struggle mujhe us insaan tak pahunchne ke raaste ka ek hissa tha.
+</p>
+
+<div class="to-wife">
+To My Future Wife
+</div>
+
+<p>
+Abhi main tumhara naam nahi jaanta.
+Abhi mujhe nahi pata tum kahan ho.
+</p>
+
+<p>
+Lekin jab tum meri life mein aaogi,
+main chahta hoon ki hum milkar apni ek nayi story likhein. ❤️
+</p>
+
+<div class="closing">
+Future Chapter — Not Written Yet.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= DOTS ================= -->
+
+<div class="dots">
+
+<div class="dot active" data-page="0"></div>
+<div class="dot" data-page="1"></div>
+<div class="dot" data-page="2"></div>
+<div class="dot" data-page="3"></div>
+<div class="dot" data-page="4"></div>
+
+</div>
+
+
+<!-- ================= SWIPE HINT ================= -->
+
+<div class="swipe" id="swipeHint">
+Swipe to continue
+</div>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<div class="nav">
+
+<button id="backBtn">
+← BACK
+</button>
+
+<div class="counter" id="counter">
+01 / 05
+</div>
+
+<button id="nextBtn">
+NEXT →
+</button>
+
+</div>
+
+
+<script>
+
+const slider =
+document.getElementById("slider");
+
+const pages =
+document.querySelectorAll(".page");
+
+const dots =
+document.querySelectorAll(".dot");
+
+const progress =
+document.getElementById("progress");
+
+const counter =
+document.getElementById("counter");
+
+const chapter =
+document.getElementById("chapter");
+
+const backBtn =
+document.getElementById("backBtn");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+const swipeHint =
+document.getElementById("swipeHint");
+
+
+let current = 0;
+
+let startX = 0;
+let startY = 0;
+let dragging = false;
+
+
+/* ================= GO TO PAGE ================= */
+
+function goToPage(index){
+
+  if(index < 0){
+    index = 0;
+  }
+
+  if(index > pages.length - 1){
+    index = pages.length - 1;
+  }
+
+  current = index;
+
+  slider.style.transform =
+    `translate3d(-${current * 100}vw,0,0)`;
+
+
+  pages.forEach((page,i)=>{
+
+    page.classList.toggle(
+      "active",
+      i === current
+    );
+
+  });
+
+
+  dots.forEach((dot,i)=>{
+
+    dot.classList.toggle(
+      "active",
+      i === current
+    );
+
+  });
+
+
+  counter.textContent =
+    String(current + 1).padStart(2,"0")
+    +
+    " / "
+    +
+    String(pages.length).padStart(2,"0");
+
+
+  chapter.textContent =
+    "Chapter "
+    +
+    String(current + 1).padStart(2,"0");
+
+
+  progress.style.width =
+    ((current + 1) / pages.length * 100)
+    +
+    "%";
+
+
+  backBtn.disabled =
+    current === 0;
+
+
+  if(current === pages.length - 1){
+
+    nextBtn.textContent =
+      "RESTART ↻";
+
+  }else{
+
+    nextBtn.textContent =
+      "NEXT →";
+
+  }
+
+
+  if(current > 0){
+
+    swipeHint.style.opacity = "0";
+
+  }else{
+
+    swipeHint.style.opacity = "1";
+
+  }
+
+}
+
+
+/* ================= NEXT ================= */
+
+function nextPage(){
+
+  if(current === pages.length - 1){
+
+    goToPage(0);
+
+  }else{
+
+    goToPage(current + 1);
+
+  }
+
+}
+
+
+/* ================= BACK ================= */
+
+function previousPage(){
+
+  goToPage(current 
